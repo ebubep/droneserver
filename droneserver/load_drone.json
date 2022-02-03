@@ -1,0 +1,17 @@
+{"drone_id":2,
+"operator_on_duty":"Mr Letchkov",
+	"payload" :[
+				{
+					"med_code":"IVM322",
+					"qty":2
+				},
+				{
+					"med_code":"VITC23",
+					"qty":2
+				},
+				{
+					"med_code":"ZINC24",
+					"qty":5
+				}
+			]
+}

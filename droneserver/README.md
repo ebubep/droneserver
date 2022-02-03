@@ -1,3 +1,4 @@
+
 ## Drones
 
 [[_TOC_]]
@@ -36,10 +37,10 @@ Develop a service via REST API that allows clients to communicate with the drone
 
 The service should allow:
 - registering a drone;
-- loading a drone with medication items;
-- checking loaded medication items for a given drone; 
 - checking available drones for loading;
 - check drone battery level for a given drone;
+- loading a drone with medication items;
+- checking loaded medication items for a given drone; 
 
 > Feel free to make assumptions for the design approach. 
 
@@ -68,5 +69,46 @@ While implementing your solution **please take care of the following requirement
 - Advice: Show us how you work through your commit history.
 
 ---
+
+## Solution
+
+### Platform
+Built with JDK 17 and Spring 3
+Database is H2 in embedded mode 
+Required data is pre-loaded in droneserver\src\main\resources\data.sql file
+Database schema is at droneserver\src\main\resources\chema.sql
+
+Build Instructions 
+For Windows
+Execute .\droneserver\gradlew.bat --configure-on-demand -x check bootRun
+
+For POSIX systems 
+Execute .\droneserver\gradlew --configure-on-demand -x check bootRun
+
+### REST End-points 
+http://localhost:8080/register
+Test this end-point by passing the contents of register.json as a body parameter in Postman.
+In Postman, I used Body -> raw ->json
+
+http://localhost:8080/load
+Test this end-point by passing the contents of load_drone.json as a body parameter in Postman.
+In Postman, I used Body -> raw ->json
+
+http://localhost:8080/check_loaded_items
+Test this end-point by passing the contents of check_loaded_items.json as a body parameter in Postman.
+In Postman, I used Body -> raw ->json
+
+http://localhost:8080/check_battery_level
+Test this end-point by passing the contents of check_loaded_items.json as a body parameter in Postman.
+
+http://localhost:8080/check_available_drones
+This end-point requires no input JSON parameter.
+
+http://localhost:8080/view_all_drones
+This end-point requires no input JSON parameter.
+
+http://localhost:8080/view_battery_levels
+This end-point requires no input JSON parameter.
+
 
 :scroll: **END** 
