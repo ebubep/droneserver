@@ -16,7 +16,7 @@ Useful drone functions include delivery of small items that are (urgently) neede
 
 ---
 
-### Task description
+### Description
 
 We have a fleet of **10 drones**. A drone is capable of carrying devices, other than cameras, and capable of delivering small loads. For our use case **the load is medications**.
 
@@ -33,7 +33,7 @@ Each **Medication** has:
 - code (allowed only upper case letters, underscore and numbers);
 - image (picture of the medication case).
 
-This project is exposes a service via REST API that allows clients to communicate with the drones (i.e. **dispatch controller**). 
+This project  exposes a service via REST API that allows clients to communicate with the drones (i.e. **dispatch controller**). 
 
 The service allows:
 - registering a drone;
@@ -44,7 +44,7 @@ The service allows:
 
 
 ### Platform
-Built with JDK 17 and Spring 3
+Built with JDK 17 and Spring 2.7
 Database is H2 in embedded mode 
 Required data is pre-loaded in droneserver\src\main\resources\data.sql file
 Database schema is at droneserver\src\main\resources\chema.sql
