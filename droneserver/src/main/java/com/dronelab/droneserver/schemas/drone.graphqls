@@ -1,0 +1,13 @@
+
+type Drone {
+    id: ID!
+    serial: String!
+    battery: Int!
+    state: String!
+    weightLimit: String!
+}
+
+type Query {
+    allDrones : [Drone]!
+}
+

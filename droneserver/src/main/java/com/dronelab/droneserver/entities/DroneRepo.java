@@ -1,7 +1,7 @@
 
-package com.musalasoft.droneserver.entities;
+package com.dronelab.droneserver.entities;
 
-import com.musalasoft.droneserver.entities.Drone;
+import com.dronelab.droneserver.entities.Drone;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

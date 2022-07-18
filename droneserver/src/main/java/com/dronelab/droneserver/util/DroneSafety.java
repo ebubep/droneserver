@@ -1,12 +1,12 @@
 
-package com.musalasoft.droneserver.util;
+package com.dronelab.droneserver.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.musalasoft.droneserver.DroneManager;
-import com.musalasoft.droneserver.entities.Drone;
-import com.musalasoft.droneserver.entities.DroneRepo;
-import com.musalasoft.droneserver.entities.MedRepo;
-import com.musalasoft.droneserver.entities.Medication;
+import com.dronelab.droneserver.DroneManager;
+import com.dronelab.droneserver.entities.Drone;
+import com.dronelab.droneserver.entities.DroneRepo;
+import com.dronelab.droneserver.entities.MedRepo;
+import com.dronelab.droneserver.entities.Medication;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 

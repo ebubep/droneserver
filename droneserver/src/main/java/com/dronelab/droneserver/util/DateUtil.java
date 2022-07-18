@@ -1,5 +1,5 @@
 
-package com.musalasoft.droneserver.util;
+package com.dronelab.droneserver.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

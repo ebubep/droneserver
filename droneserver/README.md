@@ -33,44 +33,15 @@ Each **Medication** has:
 - code (allowed only upper case letters, underscore and numbers);
 - image (picture of the medication case).
 
-Develop a service via REST API that allows clients to communicate with the drones (i.e. **dispatch controller**). The specific communicaiton with the drone is outside the scope of this task. 
+This project is exposes a service via REST API that allows clients to communicate with the drones (i.e. **dispatch controller**). 
 
-The service should allow:
+The service allows:
 - registering a drone;
 - checking available drones for loading;
 - check drone battery level for a given drone;
 - loading a drone with medication items;
 - checking loaded medication items for a given drone; 
 
-> Feel free to make assumptions for the design approach. 
-
----
-
-### Requirements
-
-While implementing your solution **please take care of the following requirements**: 
-
-#### Functional requirements
-
-- There is no need for UI;
-- Prevent the drone from being loaded with more weight that it can carry;
-- Prevent the drone from being in LOADING state if the battery level is **below 25%**;
-- Introduce a periodic task to check drones battery levels and create history/audit event log for this.
-
----
-
-#### Non-functional requirements
-
-- Input/output data must be in JSON format;
-- Your project must be buildable and runnable;
-- Your project must have a README file with build/run/test instructions (use DB that can be run locally, e.g. in-memory, via container);
-- Required data must be preloaded in the database.
-- JUnit tests are optional but advisable (if you have time);
-- Advice: Show us how you work through your commit history.
-
----
-
-## Solution
 
 ### Platform
 Built with JDK 17 and Spring 3

@@ -7,28 +7,26 @@ drop table if exists load_event;
 drop table if exists load_items;
 
 CREATE TABLE IF NOT EXISTS drone (
-  id INTEGER  NULL AUTO_INCREMENT,
+  id int  NOT NULL AUTO_INCREMENT,
   serial_number varchar(100) NOT NULL,
-  model INTEGER NOT NULL,
+  model int NOT NULL,
   weight_limit int NOT NULL,
-  battery INTEGER NOT NULL,
-  drone_state INTEGER NOT NULL,
+  battery int NOT NULL,
+  drone_state int NOT NULL,
   created_at timestamp NULL ,
   updated_at timestamp NOT NULL ,
-  PRIMARY KEY (id),
-UNIQUE KEY `serial_number` (`serial_number`)
-); 
+  PRIMARY KEY (id)); 
 
 
 CREATE TABLE IF NOT EXISTS drone_model (
-  id INTEGER  NULL AUTO_INCREMENT,
+  id INTEGER NOT  NULL AUTO_INCREMENT,
   name varchar(20) NOT NULL,
   PRIMARY KEY (id)
 ) ;
 
 
 CREATE TABLE IF NOT EXISTS  medication (
-  id INTEGER  NULL AUTO_INCREMENT,
+  id INTEGER  NOT  NULL AUTO_INCREMENT,
   name varchar(100) NOT NULL,
   weight float NOT NULL,
   code varchar(10) NOT NULL,
@@ -39,11 +37,10 @@ CREATE TABLE IF NOT EXISTS  medication (
 ) ;
 
 CREATE TABLE IF NOT EXISTS `battery_log` (
-  `id` int  NULL AUTO_INCREMENT,
+  `id` int  NOT  NULL AUTO_INCREMENT,
   `drone_id` int NOT NULL,
   `battery_level` int NOT NULL,
-  PRIMARY KEY (`id`),
-UNIQUE KEY `drone_id` (`drone_id`)
+  PRIMARY KEY (`id`)
 ) ;
 
 
