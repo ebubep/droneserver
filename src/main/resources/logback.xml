@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <property name="LOGS" value="./logs"/>
+
+    <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread])
+                %yellow(%logger{15}) - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="RollingFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/drone-server.log</file>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <pattern>
+                    <pattern>
+                        {
+                        "level": "%level",
+                        "message": "%msg",
+                        "logger": "%logger",
+                        "stacktrace": "%ex"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${LOGS}/archived/location-service-logger-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Disable the default pattern layout -->
+    <root level="INFO">
+        <appender-ref ref="RollingFile"/>
+        <appender-ref ref="jsonConsoleAppender"/>
+    </root>
+
+    <!-- Additivity is set to false to prevent duplication of logs in the parent appenders -->
+    <logger name="com.eduffice.api" level="INFO" additivity="false">
+        <appender-ref ref="RollingFile"/>
+        <appender-ref ref="jsonConsoleAppender"/>
+    </logger>
+</configuration>

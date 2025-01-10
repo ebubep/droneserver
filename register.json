@@ -1,0 +1,30 @@
+[
+  {
+    "serial": "104112",
+    "model": 1,
+    "weight_limit": 300,
+    "battery": 50,
+    "state": 1
+  },
+  {
+    "serial": "105",
+    "model": 1,
+    "weight_limit": 500,
+    "battery": 50,
+    "state": 1
+  },
+  {
+    "serial": "106",
+    "model": 1,
+    "weight_limit": 400,
+    "battery": 50,
+    "state": 1
+  },
+  {
+    "serial": "107",
+    "model": 1,
+    "weight_limit": 450,
+    "battery": 50,
+    "state": 1
+  }
+]
